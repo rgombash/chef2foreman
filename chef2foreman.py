@@ -7,10 +7,11 @@ import chef
 import datetime
 import ConfigParser
 import logging
+import os
 
 # Load config
 config = ConfigParser.SafeConfigParser()
-config.read('chef2foreman.ini')
+config.read(os.path.dirname(os.path.realpath(__file__)) + '/chef2foreman.ini')
 
 #setup logger
 logging.basicConfig(level=config.getint('MAIN', 'log_level'))
